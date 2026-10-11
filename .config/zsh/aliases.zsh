@@ -1,0 +1,9 @@
+alias ls='eza --icons --group-directories-first'
+alias ll='eza -lbF --icons --git --group-directories-first'
+alias la='eza -abghilmuS --icons --git'
+alias lt='eza --tree --icons'
+alias satty="$HOME/.local/bin/satty-terminal"
+alias cat="bat"
+alias cck='cargo check'
+alias ct='cargo test'
+alias cr='cargo run'
