@@ -1,0 +1,6 @@
+[general]
+early-exit = true
+output-filename = "~/Images/Screenshots/Screenshot_%Y%m%d_%H%M%S.png"
+fullscreen = false
+annotation-size-factor = 2.0
+disable-notifications = true

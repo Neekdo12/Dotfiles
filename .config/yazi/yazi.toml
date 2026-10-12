@@ -1,0 +1,9 @@
+[opener]
+satty = [
+    { run = '$HOME/.local/bin/satty-terminal --filename "$1"', orphan = true, desc = "Satty" }
+]
+
+[open]
+prepend_rules = [
+    { mime = "image/*", use = "satty" },
+]

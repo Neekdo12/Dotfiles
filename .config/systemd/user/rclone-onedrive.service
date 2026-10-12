@@ -1,0 +1,17 @@
+[Unit]
+Description=rclone OneDrive Mount
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+# Upravte název rclone dálkového úložiště a cílovou složku
+ExecStart=/usr/bin/rclone mount Kubik: /home/kubik/Onedrive --config=%h/.config/rclone/rclone.conf --vfs-cache-mode writes --vfs-cache-max-age 24h --log-file=%h/.config/rclone/rclone.log --log-level INFO
+
+# Zajišťuje odpojení při vypínání služby
+ExecStop=/bin/fusemount -u /home/kubik/Onedrive
+Restart=on-failure
+RestartSec=10
+
+[Install]
+WantedBy=default.target

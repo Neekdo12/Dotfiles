@@ -1,0 +1,28 @@
+window#osd {
+    border-radius: 12px;
+}
+
+#osd-window {
+    padding: 4px 8px;
+    min-width: 80px;
+}
+
+image {
+    -gtk-icon-size: 14px;
+}
+
+label {
+    font-size: 10px;
+}
+
+progressbar {
+    min-height: 4px;
+}
+
+progressbar trough {
+    min-height: 4px;
+}
+
+progressbar progress {
+    min-height: 4px;
+}

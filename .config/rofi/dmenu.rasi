@@ -1,0 +1,31 @@
+* {
+    background-color: #1a1a1a;  /* nebo #222222 podle tvého i3bar colors */
+    text-color:       #ffffff;
+    border-color:     #000000;
+    font: "Rubik Regular 12";
+}
+
+window {
+    location:    north;
+    anchor:      north;
+    width:       100%;
+    height:      22px;
+    border:      0;
+    padding:     0;
+}
+
+mainbox {
+    padding:    0;
+    border:     0;
+    children:   [ inputbar ];
+}
+
+inputbar {
+    padding:    2px 4px;
+    children:   [ prompt, entry, case-indicator ];
+    children: [ entry, case-indicator ];
+}
+
+listview {
+    lines: 0;
+}

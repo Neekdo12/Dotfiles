@@ -1,0 +1,34 @@
+* {
+    background-color: #000000;
+    text-color:       #ffffff;
+    border-color:     #000000;
+    font:             "Rubik Regular 10";
+}
+
+window {
+    location:    north;
+    anchor:      north;
+    width:       100%;
+    border:      0;
+    padding:     0;
+}
+
+mainbox {
+    padding:    0;
+    border:     0;
+    children:   [ inputbar, listview ];
+}
+
+inputbar {
+    padding:    2px 4px;
+    children:   [ entry, case-indicator ];
+}
+
+listview {
+    lines:      3;
+    padding:    2px 4px;
+}
+
+configuration {
+    terminal: "kitty";  /* or kitty, alacritty, wezterm... */
+}
