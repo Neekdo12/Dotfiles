@@ -18,6 +18,3 @@ source "$ZSH_CONFIG_DIR/completion.zsh"
 source "$ZSH_CONFIG_DIR/keybinds.zsh"
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 [[ ! -f "$ZSH_CONFIG_DIR/local.zsh" ]] || source "$ZSH_CONFIG_DIR/local.zsh"
-
-# Multigravity CLI launcher
-alias mgy="/home/kubik/scr/python/miltigravity/scripts/mgy"

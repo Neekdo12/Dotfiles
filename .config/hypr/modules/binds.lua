@@ -51,22 +51,18 @@ hl.bind(
 hl.bind(mainMod .. " + PERIOD", hl.dsp.exec_cmd("hyprlock"))
 
 -- Screenshots
--- hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --raw | satty --filename -"))
--- hl.bind("SHIFT + PRINT", hl.dsp.exec_cmd("hyprshot -m output -m eDP-1 --raw | satty --filename -"))
--- hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window --raw | satty --filename -"))
-
-hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --raw | ~/.local/bin/satty-screenshot --filename -"))
+hl.bind("PRINT", hl.dsp.exec_cmd("hyprshot -m region --raw | satty --filename -"))
 hl.bind(
 	"SHIFT + PRINT",
-	hl.dsp.exec_cmd("hyprshot -m output -m eDP-1 --raw | ~/.local/bin/satty-screenshot --filename -")
+	hl.dsp.exec_cmd("hyprshot -m output -m active --raw | satty --filename -")
 )
-hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window --raw | ~/.local/bin/satty-screenshot --filename -"))
+hl.bind(mainMod .. " + PRINT", hl.dsp.exec_cmd("hyprshot -m window --raw | satty --filename -"))
 
 -- Move and resize winows
-hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -step, y = 0, relative = true }, { repeating = true }))
-hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = step, y = 0, relative = true }, { repeating = true }))
-hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -step, relative = true }, { repeating = true }))
-hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = step, relative = true }, { repeating = true }))
+hl.bind(mainMod .. " + SHIFT + H", hl.dsp.window.resize({ x = -step, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + L", hl.dsp.window.resize({ x = step, y = 0, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + K", hl.dsp.window.resize({ x = 0, y = -step, relative = true }), { repeating = true })
+hl.bind(mainMod .. " + SHIFT + J", hl.dsp.window.resize({ x = 0, y = step, relative = true }), { repeating = true })
 
 hl.bind(mainMod .. " + H", hl.dsp.focus({ direction = "left" }))
 hl.bind(mainMod .. " + L", hl.dsp.focus({ direction = "right" }))

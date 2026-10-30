@@ -1,19 +1,10 @@
-#!/bin/bash
-WS=$(hyprctl activeworkspace -j | jq -r '.id')
-MODE=$1
+#!/usr/bin/env bash
+# Screenshot helper: region (default), output (active monitor), or window
+MODE="${1:-region}"
 
-case $MODE in
-    region)  bash -c 'hyprshot -m region --raw | satty --filename -' & ;;
-    output)  bash -c 'hyprshot -m output -m eDP-1 --raw | satty --filename -' & ;;
-    window)  bash -c 'hyprshot -m window --raw | satty -f -' & ;;
+case "$MODE" in
+    region)  hyprshot -m region --raw | satty --filename - ;;
+    output)  hyprshot -m output -m active --raw | satty --filename - ;;
+    window)  hyprshot -m window --raw | satty --filename - ;;
+    *)       hyprshot -m region --raw | satty --filename - ;;
 esac
-
-# Počkáme na satty a přesuneme na aktuální workspace
-for i in $(seq 1 30); do
-    sleep 0.1
-    ADDR=$(hyprctl clients -j | jq -r '.[] | select(.class=="satty") | .address' | head -1)
-    if [ -n "$ADDR" ]; then
-        hyprctl dispatch movetoworkspace "$WS,address:$ADDR"
-        break
-    fi
-done

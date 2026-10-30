@@ -1,1 +1,0 @@
-let round = 16 // Zaoblení rohů

@@ -70,25 +70,12 @@ hl.window_rule({
     no_blur = true
 })
 
--- Satty floaty and position
--- hl.window_rule({
---     match = { class = "^(com.gabm.satty)$" },
---     float = true,
---     monitor = "cursor",
---     center = true,
---     size = {"(monitor_w*0.5)", "(monitor_h*0.5)"}
--- })
-
--- Satty floaty and position
+-- Satty float and position
 hl.window_rule({
-    match = { 
-        title = "satty-screenshot" 
-    },
+    match = { class = "^(com.gabm.satty)$" },
     float = true,
-    monitor = "cursor",
     center = true,
-    size = {"(monitor_w*0.5)", "(monitor_h*0.5)"},
-    workspace = "special:satty_term"
+    size = {"(monitor_w*0.75)", "(monitor_h*0.75)"},
 })
 
 -- Network and bluthoot config
